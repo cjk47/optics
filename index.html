@@ -3,226 +3,326 @@
 <head>
 <style>
 
-/* UNIVERSAL STYLES */
+/* Universal Styles */
 
-html{
-font-family: Helvetica, sans-serif;
-font-size: 18px;
-line-height: 1.4;
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  background-color: white;
 }
 
-body{
-margin: 0;
+body {
+  line-height: 1.4rem;
 }
 
-.center-container{
-max-width: 960px;
-margin: auto;
+.container {
+  max-width: 960px;
+  margin: auto;
 }
 
-.center-container-large{
-max-width: 1100px;
-margin: auto;
+.flex {
+  display: flex;
 }
 
-/* HEADER/NAVIGATION STYLES */
+/* Header */
 
-header{
-background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/glasses-bg.png");
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
-padding-top: 1rem;
-height: 30rem;
+header {
+  background: url('https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/glasses-bg.png') no-repeat center center ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 1rem;
+  height: 30rem;
 }
 
-nav{
-padding: 1rem 0;
-background-color: cadetblue;
-color: white;
-display: flex;
-align-items: center;
-justify-content: space-between;
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: .67em 0;
 }
 
-.logo-container{
-display: flex;
-align-items: center;
+nav {
+  padding: 1rem 0;
+  background-color: cadetblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo{
-height: 1.5rem;
-margin-left: 2rem;
-margin-right: 1rem;
+nav div {
+  display: flex;
+  align-items: center;
 }
 
-nav ul{
-display: flex;
-justify-content: space-between;
-list-style-type: none;
-margin-right: 1rem;
+nav img {
+  height: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
 }
 
-ul li{
-padding: 0 1rem;
+ul {
+  margin-right: 1rem;
 }
 
-.headline{
-display: flex;
-justify-content: flex-end;
+ul li {
+  display: inline;
+  padding: 0 1rem;
 }
 
-.headline h1{
-margin-top: 10rem;
-margin-right: -2rem;
-background-color: white;
-padding: 2rem 5rem;
-line-height: 2.4rem;
+.truncated-menu {
+  display: none;
 }
 
-/* SERVICES STYLES */
-
-.services{
-display: flex;
-justify-content: center;
+header .flex {
+  justify-content: flex-end;
 }
 
-.services img{
-width: 5rem;
+.main-banner {
+  background-color: white;
+  padding: 0.75rem 5rem;
+  display: inline-block;
+  margin-top: 10rem;
+  margin-right: -2rem;
+  line-height: 2.4rem;
 }
 
-.services .smaller-icon{
-width: 3.5rem;
+@media only screen and (max-width: 1024px) {
+  header {
+    padding-top: 0;
+    height: 22rem;
+  }
+
+  nav.container {
+    max-width: 100%;
+  }
+
+  .main-banner {
+    padding: 0.75rem 4rem;
+    margin-top: 5rem;
+    margin-right: 2rem;
+  }
+
+  .main-banner h1 {
+    font-size: 1.33rem;
+  }
 }
 
-.service{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-text-align: center;
-margin: 3rem;
-width: 5rem;
-height: 8rem;
+@media only screen and (max-width: 700px) {
+  .menu ul {
+    display: none;
+  }
+
+  .menu ul.truncated-menu {
+    display: block;
+  }
 }
 
+@media only screen and (max-width: 560px) {
+  header div span {
+    display: none;
+  }
 
-.info-container{
-display: flex;
-justify-content: center;
-margin-bottom: 5rem;
+  header {
+    background-position: 20%;
+    height: 17rem;
+  }
+
+  .main-banner {
+    padding: 0 1rem;
+    margin: 9rem auto 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-banner h1 {
+    font-size: 1rem;
+  }
 }
 
-.info-title{
-width: 35%;
+/* Supporting Sections */
+
+.supporting {
+  display: flex;
+  justify-content: center;
 }
 
-.info-title p{
-font-weight: bold;
-background: cadetblue;
-color: white;
-padding: .5rem 1.25rem;
-width: 10rem;
+@media only screen and (max-width: 560px) {
+  .supporting {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 3rem;
+  }
 }
 
-footer{
-background-color: azure;
-height: 9.5rem;
-display: flex;
-align-items: center;
+/* Service Section */
+
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 3rem;
+  width: 5rem;
+  height: 8rem;
+}
+
+.service img {
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+
+.service img.paper-icon {
+  width: 3.5rem;
+}
+
+@media only screen and (max-width: 560px) {
+  .service {
+    height: auto;
+    margin: .77rem;
+    font-size: .77rem;
+  }
+}
+
+/* Info Section */
+
+.info {
+  width: 35%;
+  margin-right: 5%;
+  margin-bottom: 4rem;
+}
+
+.info p {
+  padding: 1rem 0;
+}
+
+.title {
+  background-color: cadetblue;
+  padding: 0.5rem 1.25rem;
+  font-weight: bold;
+  color: white;
+  max-width: 10rem;
+}
+
+@media only screen and (max-width: 560px) {
+  .info {
+    width: auto;
+  }
+
+  .info .title {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .info p {
+    padding: 1rem;
+    font-size: .77rem;
+  }
+}
+
+/* Footer */
+
+footer {
+  background-color: azure;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+footer img {
+  height: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 560px) {
+  footer {
+    justify-content: center;
+  }
+
+  footer div {
+    display: none;
+  }
 }
 
 </style>
 </head>
-<body>
-<header>
+<!-- Header -->
 
-<!-- HEADER/NAVIGATION -->
+  <header>
+    <nav class="container">
+      <div>
+        <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/logo-white.png" />
+        <span>Tortoiseshell Optics</span>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>Services</li>
+          <li>Products</li>
+          <li>Contact</li>
+        </ul>
+        <ul class="truncated-menu">
+          <li>Menu</li>
+        </ul>
+      </div>
+    </nav>
+    <div class="flex container">
+      <div class="main-banner">
+        <h1>DON'T JUST LOOK, SEE.</h1>
+      </div>
+    </div>
+  </header>
 
+  <!-- Supporting Section -->
 
-<nav class="center-container">
+  <div class="supporting">
 
-   <div class="logo-container">
+    <!-- Service Section -->
 
-<img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/logo-white.png" class=logo>
+    <div class="service">
+      <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/paper-icon.png" class="paper-icon" />
+      <div>Comprehensive Exams</div>
+    </div>
+    <div class="service">
+      <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/ruler-icon.png" />
+      <div>Custom Fittings</div>
+    </div>
+    <div class="service">
+      <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/truck-icon.png" />
+      <div>Fast Delivery</div>
+    </div>
+  </div>
 
-<span>Tortoiseshell Optics</span>
+  <!-- Info Section -->
 
-</div>
+  <div class="supporting container">
+    <div class="info">
+      <div class="title">
+        PHILOSOPHY
+      </div>
+      <p>
+        Over 75% of our brains are dedicated to one sense: vision. We believe everyone deserves to see the world, not matter what. That’s why we offer eye exams, custom fittings, and quick delivery at a low cost. It’s your vision that makes ours.
+      </p>
+    </div>
+    <div class="info">
+      <div class="title">
+        APPOINTMENTS
+      </div>
+      <p>
+        Schedule an appointment by calling us at (312) 654-0987. We’re open Tuesday - Saturday, 9AM - 6PM.
+      </p>
+    </div>
+  </div>
 
-<div class="menu">
-<ul>
-<li>Services</li>
-<li>Products</li>
-<li>Contact</li>
-</ul>
-</div>
+  <!-- Footer -->
 
-</nav>
-
-
-<div class="headline center-container">
-
-<h1> DON'T JUST LOOK, SEE </h1>
-
-</div>
-
-
-</header>
-
-
-<main>
-
-<div class="services">
-
-<div class="service">
-<img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/paper-icon.png" class="smaller-icon">
-<span>Comprehensive Exams</span>
-</div>
-
-<div class="service">
-<img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/ruler-icon.png">
-<span>Custom Fittings</span>
-</div>
-
-
-<div class="service">
-<img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/truck-icon.png">
-<span>Fast Delivery</span>
-</div>
-
-</div>
-
-
-<div class="info-container">
-
-
-<div class="info-title">
-<p>PHILOSOPHY</p>
-<span>Over 75% of our brains are dedicated to one sense: vision. We believe everyone deserves to see the world, no matter what. It's your vision that makes ours.</span>
-</div>
-
-<div class="info-title">
-<p>APPOINTMENTS</p>
-<span>Schedule an appointment by calling us at (516) 521 4490. We're open Monday - Friday, 9am - 6pm </span>
-</div>
-
-</div>
-
-</main>
-
-<footer class="center-container-large">
-
-
-<div class="logo-container">
-
-<img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/logo-black.png" class=logo>
-
-<span> Copyright Tortoiseshell Optics</span>
-
-</div>
-</footer>
-
+  <footer class="container">
+    <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/logo-black.png" />
+    <div>Copyright Tortoiseshell Optics</div>
+  </footer>
 
 </body>
 </html>
